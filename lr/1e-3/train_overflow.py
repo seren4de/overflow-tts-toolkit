@@ -12,7 +12,7 @@ from TTS.utils.audio import AudioProcessor
 
 import torch
 
-output_path = os.path.dirname(os.path.abspath(__file__))+ "/out/"
+output_path = os.path.dirname(os.path.abspath(__file__))+ "/lr/"
 
 # init configs
 dataset_config = BaseDatasetConfig(

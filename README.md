@@ -1,6 +1,6 @@
 # Fine-Tuned TTS Overflow Model
 
-A repository containing a fine-tuned Text-to-Speech (TTS) overflow model for single-speaker voice synthesis, optimized for audiobook narration.
+A ProofOfConcept for fine-tuning the overflow TTS (Text To Speech) model for single-speaker voice synthesis, optimized for audiobook narration.
 
 ## Prerequisites
 
@@ -53,30 +53,24 @@ mfa server init
 
 1. **Convert MP3 to WAV**:
 ```bash
-python3 mp32wav_.py ./audio/input_audio/chapters/unfollow/ ./audio/output_audio/unfollow/
-mv ./audio/output_audio/unfollow/* ./corpus_directory/Speaker1/
+python3 mp3Towav.py <audio/input> ./corpus_directory/Speaker1/
 ```
 
-2. **Process EPub Books**:
+2. **Process EPub Books to sentences and tokenize them**:
 ```bash
-python3 splitepub_.py ./text/input_text/Unfollow.epub ./text/input_text/
+python splitEpubToSentences.py input.epub ./work_dir ./output_dir
 ```
 
-3. **Tokenize Text**:
+3. **Split speech to Sentences**:
 ```bash
-python3 tokenize_.py
-```
-
-4. **Split into Sentences**:
-```bash
-python3 split2sentences_.py ./corpus_directory/
+python3 speechDatasetPreprocessor.py ./corpus_directory/
 ```
 
 ### 3. Audio-Text Alignment
 
-Option 1: Using alignaudiotext_.py
+Option 1: Using the wrapper script [`alignSpeechToText.py`](./alignSpeechToText.py)
 ```bash
-python3 alignaudiotext_.py
+python3 alignSpeechToText.py
 # Note: Press Enter in terminal to update if process appears frozen
 ```
 
@@ -89,41 +83,38 @@ mfa align --clean --single_speaker './corpus_directory' 'english_us_arpa' 'engli
 
 Clean and prepare training data:
 ```bash
-(tts) ┌──(seren4de㉿Bitland)-[~/overflow_ft]
-└─$ python clean_.py
-└─$ python rmextmeta_py
+(tts) [/tmp/overflow-tts-toolkit]
+$ python TTSDatasetNormalizer.py
 ```
 
 Start training with one of these configurations:
 
 ```bash
 # Basic configuration
-CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:25' python train_overflow.py \
+CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:25' python trainOverflow.py \
     --config_path ./config.json \
     --restore_path $HOME/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
 
 # Alternative configuration (21MB split size)
-CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:21' python train_overflow.py \
-    --config_path /home/seren4de/overflow_ft/config.json \
-    --restore_path /home/seren4de/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
+CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:21' python trainOverflow.py \
+    --config_path /tmp/overflow-tts-toolkit/config.json \
+    --restore_path $HOME/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
 
 # Continue training from checkpoint
-CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:21' python train_overflow.py \
-    --config_path /home/seren4de/overflow_ft/out/1e-5/config.json \
-    --restore_path /home/seren4de/overflow_ft/out/1e-5/checkpoint_21500.pth
+CUDA_VISIBLE_DEVICES="0" PYTORCH_CUDA_ALLOC_CONF='max_split_size_mb:21' python trainOverflow.py \
+    --config_path /tmp/overflow-tts-toolkit/lr/1e-5/config.json \
+    --restore_path $HOME/overflow_ft/lr/1e-5/checkpoint_21500.pth
 ```
 
 ## Project Files
 
-- `alignaudiotext_.py`: Aligns audio with transcripts
-- `clean_.py`: Preprocesses training data
-- `format.py`: Formats text data
-- `mp32wav_.py`: Converts MP3 to WAV
-- `rmextmeta_py`: Removes external metadata
-- `split2sentences_.py`: Splits text into sentences
-- `splitepub_.py`: Extracts text from EPUB files
-- `tokenize_.py`: Tokenizes text data
-- `train_overflow.py`: Main training script
+- [`alignSpeechToText.py`](./alignSpeechToText.py): Aligns audio/speech with transcript
+- [`TTSDatasetNormalizer.py`](./TTSDatasetNormalizer.py): Preprocesses training data and removes external metadata
+- [`format.py`](./format.py): Formats text data
+- [`mp3Towav.py`](./mp3Towav.py): Converts MP3 to WAV
+- [`speechDatasetPreprocessor.py`](./speechDatasetPreprocessor.py): Splits speech to Sentences
+- [`splitEpubToSentences.py`](./splitEpubToSentences.py): Extracts and splits text from EPUB to txt sentences
+- [`trainOverflow.py`](./trainOverflow.py): Main training script
 
 ## Dataset Structure
 

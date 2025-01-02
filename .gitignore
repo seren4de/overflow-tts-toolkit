@@ -1,14 +1,12 @@
 # Audio files
-*.mp3
-*.wav
-*.flac
-*.m4a
-*.wma
-*.aac
+**/*.mp3
+**/*.wav
+**/*.flac
+**/*.m4a
+**/*.wma
+**/*.aac
 
 # params
-*.pt
-*.npy
-*.pth
-
-*.Bitland
+**/*.pt
+**/*.npy
+**/*.pth

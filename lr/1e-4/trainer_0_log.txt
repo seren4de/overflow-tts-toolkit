@@ -7,7 +7,7 @@
  | > Torch CUDNN: True
  | > Torch CUDNN deterministic: False
  | > Torch CUDNN benchmark: False
- > Start Tensorboard: tensorboard --logdir=/home/hannibal/overflow_ft/out/overflow_ljspeech-July-13-2023_11+32AM-b6133e2
+ > Start Tensorboard: tensorboard --logdir=/tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-13-2023_11+32AM-b6133e2
  > Restoring from checkpoint_43500.pth ...
  > Restoring Model...
  > Restoring Optimizer...
@@ -17,7 +17,7 @@
  > Model has 28467889 parameters
 
 [4m[1m > EPOCH: 0/1000[0m
- --> /home/hannibal/overflow_ft/out/overflow_ljspeech-July-13-2023_11+32AM-b6133e2
+ --> /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-13-2023_11+32AM-b6133e2
 
 [1m > TRAINING (2023-07-13 11:32:29) [0m
 
@@ -8636,7 +8636,7 @@
      | > loader_time: 64.29960  (0.64007)
 
 
- > CHECKPOINT : /home/hannibal/overflow_ft/out/overflow_ljspeech-July-13-2023_11+32AM-b6133e2/checkpoint_44000.pth
+ > CHECKPOINT : /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-13-2023_11+32AM-b6133e2/checkpoint_44000.pth
 
 [1m   --> STEP: 500/3058 -- GLOBAL_STEP: 44001[0m
      | > loss: -26.69146  (-29.46163)
@@ -17253,7 +17253,7 @@
      | > loader_time: 67.47650  (0.64912)
 
 
- > CHECKPOINT : /home/hannibal/overflow_ft/out/overflow_ljspeech-July-13-2023_11+32AM-b6133e2/checkpoint_44500.pth
+ > CHECKPOINT : /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-13-2023_11+32AM-b6133e2/checkpoint_44500.pth
 
 [1m   --> STEP: 1000/3058 -- GLOBAL_STEP: 44501[0m
      | > loss: -23.64381  (-28.06132)
@@ -25870,7 +25870,7 @@
      | > loader_time: 65.15900  (0.65457)
 
 
- > CHECKPOINT : /home/hannibal/overflow_ft/out/overflow_ljspeech-July-13-2023_11+32AM-b6133e2/checkpoint_45000.pth
+ > CHECKPOINT : /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-13-2023_11+32AM-b6133e2/checkpoint_45000.pth
 
 [1m   --> STEP: 1500/3058 -- GLOBAL_STEP: 45001[0m
      | > loss: -21.47344  (-25.64478)
@@ -34487,7 +34487,7 @@
      | > loader_time: 64.27400  (0.65600)
 
 
- > CHECKPOINT : /home/hannibal/overflow_ft/out/overflow_ljspeech-July-13-2023_11+32AM-b6133e2/checkpoint_45500.pth
+ > CHECKPOINT : /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-13-2023_11+32AM-b6133e2/checkpoint_45500.pth
 
 [1m   --> STEP: 2000/3058 -- GLOBAL_STEP: 45501[0m
      | > loss: -19.94957  (-24.44537)
@@ -43104,7 +43104,7 @@
      | > loader_time: 65.40330  (0.65532)
 
 
- > CHECKPOINT : /home/hannibal/overflow_ft/out/overflow_ljspeech-July-13-2023_11+32AM-b6133e2/checkpoint_46000.pth
+ > CHECKPOINT : /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-13-2023_11+32AM-b6133e2/checkpoint_46000.pth
 
 [1m   --> STEP: 2500/3058 -- GLOBAL_STEP: 46001[0m
      | > loss: -21.88166  (-23.76499)
@@ -48573,4 +48573,4 @@
      | > step_time: 4.62670  (1.94757)
      | > loader_time: 0.00640  (0.65000)
 
- ! Run is kept in /home/hannibal/overflow_ft/out/overflow_ljspeech-July-13-2023_11+32AM-b6133e2
+ ! Run is kept in /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-13-2023_11+32AM-b6133e2

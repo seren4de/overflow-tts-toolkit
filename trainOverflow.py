@@ -12,7 +12,7 @@ from TTS.utils.audio import AudioProcessor
 
 import torch
 
-output_path = os.path.dirname(os.path.abspath(__file__))+ "/out/"
+output_path = os.path.dirname(os.path.abspath(__file__))+ "/lr/"
 
 # init configs
 dataset_config = BaseDatasetConfig(
@@ -35,9 +35,9 @@ audio_config = BaseAudioConfig(
 config = OverflowConfig(  # This is the config that is saved for the future use
     run_name="overflow_ljspeech",
     audio=audio_config,
-    batch_size=2,
+    batch_size=1,
     eval_batch_size=1,
-    num_loader_workers=4,
+    num_loader_workers=2,
     num_eval_loader_workers=2,
     run_eval=True,
     test_delay_epochs=-1,
@@ -54,7 +54,7 @@ config = OverflowConfig(  # This is the config that is saved for the future use
     mixed_precision=True,
     output_path=output_path,
     datasets=[dataset_config],
-    lr=0.0001
+    lr=0.001
 )
 
 # INITIALIZE THE AUDIO PROCESSOR
@@ -98,3 +98,4 @@ trainer = Trainer(
 )
 torch.cuda.empty_cache()
 trainer.fit()
+torch.cuda.empty_cache()

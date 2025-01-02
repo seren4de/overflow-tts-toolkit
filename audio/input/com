@@ -1,26 +1,26 @@
 tts --text "" --speaker_wav "Megan.wav" --language_idx 'en' --out_path "megan_10h30_output.wav" --model_name "tts_models/multilingual/multi-dataset/your_tts"
 
-tts --model_path "/home/hannibal/overflow_ft/out/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/checkpoint_21000.pth" --config_path "/home/hannibal/overflow_ft/config.json" --list_language_idxs --list_speaker_idxs
+tts --model_path "/tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/checkpoint_21000.pth" --config_path "/tmp/overflow-tts-toolkit/config.json" --list_language_idxs --list_speaker_idxs
 
-tts --text "This is a test phrase to evaluate how much the learning rate influence the model performance over 500 and 1000 epochs, in each case the newer learning rate becomes 10 times the previous learning rate." --model_path /home/hannibal/overflow_ft/out/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/checkpoint_21000.pth --config_path /home/hannibal/overflow_ft/out/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/config.json --out_path ./audio/output_audio/testlr/1e-5_2100.wav --vocoder_name vocoder_models/en/ljspeech/hifigan_v2
+tts --text "This is a test phrase to evaluate how much the learning rate influence the model performance over 500 and 1000 epochs, in each case the newer learning rate becomes 10 times the previous learning rate." --model_path /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/checkpoint_21000.pth --config_path /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/config.json --out_path /tmp/overflow-tts-toolkit/audio/output/testlr/1e-5_2100.wav --vocoder_name vocoder_models/en/ljspeech/hifigan_v2
 
 
 
 print("[+] Testing the model with the learning rate 1e-3 and the checkpoint 21000")
-tts --text $test_phrase --model_path /home/hannibal/overflow_ft/out/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/checkpoint_21000.pth --config_path /home/hannibal/overflow_ft/out/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/config.json --out_path $out_path"1e-3_21000.wav" --vocoder_name $vocoder_name
+tts --text $test_phrase --model_path /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/checkpoint_21000.pth --config_path /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/config.json --out_path $out_path"1e-3_21000.wav" --vocoder_name $vocoder_name
 
 print("[+] Testing the model with the learning rate 1e-3 and the checkpoint 21500")
-tts --text $test_phrase --model_path /home/hannibal/overflow_ft/out/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/checkpoint_21500.pth --config_path /home/hannibal/overflow_ft/out/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/config.json --out_path $out_path"1e-3_21500.wav" --vocoder_name $vocoder_name
+tts --text $test_phrase --model_path /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/checkpoint_21500.pth --config_path /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/config.json --out_path $out_path"1e-3_21500.wav" --vocoder_name $vocoder_name
 
 print("[+] Testing the model with the learning rate 1e-2 and the checkpoint 21000")
-tts --text $test_phrase --model_path /home/hannibal/overflow_ft/out/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/checkpoint_21000.pth --config_path /home/hannibal/overflow_ft/out/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/config.json --out_path $out_path"1e-2_21000.wav" --vocoder_name $vocoder_name
+tts --text $test_phrase --model_path /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/checkpoint_21000.pth --config_path /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/config.json --out_path $out_path"1e-2_21000.wav" --vocoder_name $vocoder_name
 
 print("[+] Testing the model with the learning rate 1e-2 and the checkpoint 21500")
-tts --text $test_phrase --model_path /home/hannibal/overflow_ft/out/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/checkpoint_21500.pth --config_path /home/hannibal/overflow_ft/out/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/config.json --out_path $out_path"1e-2_21500.wav" --vocoder_name $vocoder_name
+tts --text $test_phrase --model_path /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/checkpoint_21500.pth --config_path /tmp/overflow-tts-toolkit/lr/overflow_ljspeech-July-10-2023_05+59AM-eb61a8e/config.json --out_path $out_path"1e-2_21500.wav" --vocoder_name $vocoder_name
  
  
  
- --restore_path /home/hannibal/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
+ --restore_path /tmp/.local/share/tts/tts_models--en--ljspeech--overflow/model_file.pth
 
 
  tts --help | tr '\n' ' '

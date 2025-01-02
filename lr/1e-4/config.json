@@ -1,5 +1,5 @@
 {
-    "output_path": "/home/hannibal/overflow_ft/out/",
+    "output_path": "/tmp/overflow-tts-toolkit/lr/",
     "logger_uri": null,
     "run_name": "overflow_ljspeech",
     "project_name": null,
@@ -85,7 +85,7 @@
     "text_cleaner": "phoneme_cleaners",
     "enable_eos_bos_chars": false,
     "test_sentences_file": "",
-    "phoneme_cache_path": "/home/hannibal/overflow_ft/out/phoneme_cache",
+    "phoneme_cache_path": "/tmp/overflow-tts-toolkit/lr/phoneme_cache",
     "characters": {
         "characters_class": "TTS.tts.utils.text.characters.IPAPhonemes",
         "vocab_dict": null,
@@ -138,7 +138,7 @@
     "use_length_weighted_sampler": false,
     "length_weighted_sampler_alpha": 1.0,
     "force_generate_statistics": false,
-    "mel_statistics_parameter_path": "/home/hannibal/overflow_ft/out/lj_parameters.pt",
+    "mel_statistics_parameter_path": "/tmp/overflow-tts-toolkit/lr/lj_parameters.pt",
     "num_chars": 131,
     "state_per_phone": 2,
     "encoder_in_out_features": 512,
@@ -178,6 +178,6 @@
     "r": 1,
     "use_d_vector_file": false,
     "use_speaker_embedding": false,
-    "restore_path": "/home/hannibal/overflow_ft/out/1e-4/checkpoint_43500.pth",
+    "restore_path": "/tmp/overflow-tts-toolkit/lr/1e-4/checkpoint_43500.pth",
     "github_branch": "* main"
 }
