@@ -1,0 +1,15 @@
+import csv
+
+def remove_wav_extension(metafile_path, output_path):
+    with open(metafile_path, 'r') as f_in, open(output_path, 'w') as f_out:
+        reader = csv.DictReader(f_in, delimiter='|', fieldnames=['ID', 'Transcription', 'Normalized Transcription'])
+        writer = csv.DictWriter(f_out, delimiter='|', fieldnames=['ID', 'Transcription', 'Normalized Transcription'])
+        for row in reader:
+            # remove .wav extension from ID field
+            row['ID'] = row['ID'].replace('.wav', '')
+            writer.writerow(row)
+
+if __name__ == '__main__':
+    metafile_path = "./MyTTSDataset/metadata_normalized.csv"
+    output_path = "./MyTTSDataset/metadata_normalized_no_wav.csv"
+    remove_wav_extension(metafile_path, output_path)
