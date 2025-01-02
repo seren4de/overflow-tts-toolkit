@@ -14,22 +14,22 @@ A ProofOfConcept for fine-tuning the overflow TTS (Text To Speech) model for sin
 
 ```bash
 .
-├── audio/                      # Audio processing directory
-│   ├── input_audio/           # Raw audio files
-│   └── output_audio/          # Processed WAV files
-├── corpus_directory/          # Aligned audio-text data
+├── audio/                    # Audio processing directory
+│   ├── input/                # Raw audio files
+│   └── output/               # Processed WAV files
+├── corpus_directory/         # Aligned audio-text data
 │   └── Speaker1/             # Single speaker data
 ├── MyTTSDataset/             # Training dataset
 │   ├── metadata.csv
 │   └── wavs/
-├── out/                      # Training outputs
+├── ls/                      # Training outputs
 │   ├── 1e-3/                # Learning rate experiments
 │   ├── 1e-4/
 │   ├── 1e-5/
 │   └── phoneme_cache/
-└── text/                     # Text processing
-    ├── input_text/
-    └── output_text/
+└── text/                    # Text processing
+    ├── input/
+    └── output/
 ```
 
 ## Setup Instructions
